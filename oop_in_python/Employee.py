@@ -15,7 +15,7 @@
 
 
 class Employee:
-    #Init is nothing but a constructor and self is similar to this in Java
+    #Init is nothing but a constructor and self is similar to "this" in Java
     #We can also have default values --> that would make parameters optional
     def __init__(self, ID = -1, salary = 0, department = None):
         self.ID = ID
@@ -29,6 +29,7 @@ print(Steve.department)
 print(Steve.salary)
 print(Steve.ID)
 
+#Default constructor
 Mark = Employee()
 print(Mark.ID)
 print(Mark.department)
