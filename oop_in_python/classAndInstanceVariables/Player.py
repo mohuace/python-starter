@@ -1,11 +1,20 @@
 class Player:
     teamName = "CSK" #This is a class variable (static variable) belongs to the class and common for all objects
     formerTeams = []
+    teams = []
+    countPlayers = 0
 
     def __init__(self, name, id):
         self.name = name
         self.id = id #These two are instance variables
         #self.teamName = teamName
+        #It might seem confusing why self is allowed if we are referring to class variables?
+        #If we are using self, python first checks if the instance variable exists by that name
+        #if not, it checks at the class level. so if you are doing some assignments using self,
+        #it will create a new instance variable, but when u are trying to access using self,
+        #it will first check at the instance level and then at the class level
+        self.teams.append(self.name)
+        Player.countPlayers = self.countPlayers + 1
 
 
 
@@ -39,6 +48,14 @@ player1.formerTeams.append("abc for p1")
 player2.formerTeams.append("abc for p2")
 
 print(player1.formerTeams)
+
+
+#Printing the teams
+print(player1.teams)
+print(player2.teams)
+
+print(player1.countPlayers)
+print(player2.countPlayers)
 
 
 
